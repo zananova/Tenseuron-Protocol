@@ -1,0 +1,88 @@
+{
+    "name": "@zananova/tenseuron-protocol",
+    "version": "1.0.0",
+    "description": "Database-agnostic, runtime-agnostic protocol for decentralized AI task networks",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./adapters": {
+            "import": "./dist/adapters/index.mjs",
+            "require": "./dist/adapters/index.js",
+            "types": "./dist/adapters/index.d.ts"
+        },
+        "./interfaces": {
+            "import": "./dist/interfaces/index.mjs",
+            "require": "./dist/interfaces/index.js",
+            "types": "./dist/interfaces/index.d.ts"
+        },
+        "./utils": {
+            "import": "./dist/utils/index.mjs",
+            "require": "./dist/utils/index.js",
+            "types": "./dist/utils/index.d.ts"
+        }
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "test": "jest",
+        "lint": "eslint src --ext .ts",
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [
+        "tenseuron",
+        "protocol",
+        "decentralized",
+        "ai",
+        "blockchain",
+        "database-agnostic",
+        "runtime-agnostic",
+        "cloudflare-workers",
+        "ethereum",
+        "polygon",
+        "solana"
+    ],
+    "author": "Tenseuron",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zananova/Tenseuron-Protocol.git"
+    },
+    "bugs": {
+        "url": "https://github.com/zananova/Tenseuron-Protocol/issues"
+    },
+    "homepage": "https://tenseuron.com",
+    "sideEffects": false,
+    "dependencies": {
+        "ajv": "^8.12.0",
+        "ajv-formats": "^2.1.1",
+        "ethers": "^6.9.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "tsup": "^8.0.0",
+        "typescript": "^5.3.0"
+    },
+    "peerDependencies": {
+        "@prisma/client": "^5.0.0"
+    },
+    "peerDependenciesMeta": {
+        "@prisma/client": {
+            "optional": true
+        }
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
